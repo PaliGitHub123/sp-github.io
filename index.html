@@ -2,215 +2,133 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stundenplan</title>
-    <style>
-        /* Grundstil für den Stundenplan */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            font-size: 16px;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        td {
-            background-color: #f2f2f2;
-        }
-
-        /* Tabelle wird horizontal scrollbar auf kleinen Bildschirmen */
-        .table-container {
-            overflow-x: auto;
-            margin-bottom: 20px;
-        }
-
-        /* Media Query für Mobilgeräte */
-        @media (max-width: 600px) {
-            table {
-                width: 100%;
-                display: block;
-            }
-
-            /* Jede Zeile wird als Block angezeigt */
-            thead {
-                display: none;
-            }
-
-            tr {
-                display: block;
-                margin-bottom: 10px;
-                border-bottom: 2px solid #ddd;
-            }
-
-            td {
-                display: block;
-                text-align: right;
-                font-size: 14px;
-                padding: 8px;
-                border-bottom: 1px solid #ddd;
-                position: relative;
-            }
-
-            /* Label vor dem Inhalt jeder Zelle */
-            td:before {
-                content: attr(data-label);
-                position: absolute;
-                left: 0;
-                width: 50%;
-                padding-left: 10px;
-                font-weight: bold;
-                text-align: left;
-            }
-
-            /* Zeitspalte bleibt mittig */
-            td:first-child {
-                text-align: left;
-            }
-
-            td:last-child {
-                border-bottom: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h1>Stundenplan</h1>
 
-<div class="table-container">
-    <table>
-        <thead>
-        <tr>
-            <th>Zeit</th>
-            <th>Montag</th>
-            <th>Dienstag</th>
-            <th>Mittwoch</th>
-            <th>Donnerstag</th>
-            <th>Freitag</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td data-label="Zeit">07:55 - 08:40</td>
-            <td data-label="Montag">Inf - Wue - cr1</td>
-            <td data-label="Dienstag">f1 - Sie - C204</td>
-            <td data-label="Mittwoch">m2 - FrS - C203</td>
-            <td data-label="Donnerstag">inf1 - Wue - cr1</td>
-            <td data-label="Freitag">Frei</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">08:40 - 09:25</td>
-            <td data-label="Montag">geoLF - Tri - C301</td>
-            <td data-label="Dienstag">Frei</td>
-            <td data-label="Mittwoch">m2 - FrS - C203</td>
-            <td data-label="Donnerstag">geoLF - Tri - C302</td>
-            <td data-label="Freitag">ph1 - Mue - ph1</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">09:25 - 10:10</td>
-            <td data-label="Montag">d2 - UrT - B103</td>
-            <td data-label="Dienstag">geoLF - Tri - C201</td>
-            <td data-label="Mittwoch">f1 - Sie - C201</td>
-            <td data-label="Donnerstag">g1 - KiY - C204</td>
-            <td data-label="Freitag">inf1 - Wue - cr2</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">10:10 - 10:30</td>
-            <td data-label="Montag">Pause</td>
-            <td data-label="Dienstag">Pause</td>
-            <td data-label="Mittwoch">Pause</td>
-            <td data-label="Donnerstag">Pause</td>
-            <td data-label="Freitag">Pause</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">10:30 - 11:15</td>
-            <td data-label="Montag">m2 - FrS - C302</td>
-            <td data-label="Dienstag">ph1 - Mue - ph1</td>
-            <td data-label="Mittwoch">ph1 - Mue - ph1</td>
-            <td data-label="Donnerstag">m2 - FrS - C204</td>
-            <td data-label="Freitag">d2 - UrT - C203</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">11:15 - 12:00</td>
-            <td data-label="Montag">pug2 - ShM - C204</td>
-            <td data-label="Dienstag">d2 - UrT - C204</td>
-            <td data-label="Mittwoch">k1 - Pfl - C205</td>
-            <td data-label="Donnerstag">pug2 - ShM - C305</td>
-            <td data-label="Freitag">f1 - Sie - A204</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">12:00 - 12:45</td>
-            <td data-label="Montag">g1 - KiY - C203</td>
-            <td data-label="Dienstag">Pause</td>
-            <td data-label="Mittwoch">d2 - UrT - C302</td>
-            <td data-label="Donnerstag">geoLF - Tri - C304</td>
-            <td data-label="Freitag">k1 - Pfl - B104</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">12:45 - 13:30</td>
-            <td data-label="Montag">/</td>
-            <td data-label="Dienstag">s3 - KuM</td>
-            <td data-label="Mittwoch">Pause</td>
-            <td data-label="Donnerstag">/</td>
-            <td data-label="Freitag">/</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">13:30 - 14:15</td>
-            <td data-label="Montag">Arbeit?</td>
-            <td data-label="Dienstag">s3 - KuM</td>
-            <td data-label="Mittwoch">ku2 - Hoh - A004</td>
-            <td data-label="Donnerstag">Arbeit?</td>
-            <td data-label="Freitag">Arbeit?</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">14:15 - 15:00</td>
-            <td data-label="Montag">Arbeit?</td>
-            <td data-label="Dienstag">WGeo - Tri - C203</td>
-            <td data-label="Mittwoch">ku2 - Hoh - A004</td>
-            <td data-label="Donnerstag">Arbeit?</td>
-            <td data-label="Freitag">Arbeit?</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">15:00 - 15:45</td>
-            <td data-label="Montag">Arbeit?</td>
-            <td data-label="Dienstag">WGeo - Tri - C203</td>
-            <td data-label="Mittwoch">/</td>
-            <td data-label="Donnerstag">Arbeit?</td>
-            <td data-label="Freitag">Arbeit?</td>
-        </tr>
-        <tr>
-            <td data-label="Zeit">16:00</td>
-            <td data-label="Montag">Arbeit?</td>
-            <td data-label="Dienstag">/</td>
-            <td data-label="Mittwoch">/</td>
-            <td data-label="Donnerstag">Arbeit?</td>
-            <td data-label="Freitag">Arbeit?</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<table>
+    <thead>
+    <tr>
+        <th>Zeit</th>
+        <th>Montag</th>
+        <th>Dienstag</th>
+        <th>Mittwoch</th>
+        <th>Donnerstag</th>
+        <th>Freitag</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>07:55 - 08:40</td>
+        <td>Inf - Wue - cr1</td>
+        <td>f1 - Sie - C204</td>
+        <td>m2 - FrS - C203</td>
+        <td>inf1 - Wue - cr1</td>
+        <td>Frei</td>
+    </tr>
+    <tr>
+        <td>08:40 - 09:25</td>
+        <td>geoLF - Tri - C301</td>
+        <td>Frei</td>
+        <td>m2 - FrS - C203</td>
+        <td>geoLF - Tri - C302</td>
+        <td>ph1 - Mue - ph1</td>
+    </tr>
+    <tr>
+        <td>09:25 - 10:10</td>
+        <td>d2 - UrT - B103</td>
+        <td>geoLF - Tri - C201</td>
+        <td>f1 - Sie - C201</td>
+        <td>g1 - KiY - C204</td>
+        <td>inf1 - Wue - cr2</td>
+    </tr>
+    <tr>
+        <td>10:10 - 10:30</td>
+        <td>Pause</td>
+        <td>Pause</td>
+        <td>Pause</td>
+        <td>Pause</td>
+        <td>Pause</td>
+    </tr>
+
+    <tr>
+        <td>10:30 - 11:15</td>
+        <td>m2 - FrS - C302</td>
+        <td>ph1 - Mue - ph1</td>
+        <td>ph1 - Mue - ph1</td>
+        <td>m2 - FrS - C204</td>
+        <td>d2 - UrT - C203</td>
+    </tr>
+
+    <tr>
+        <td>11:15 - 12:00</td>
+        <td>pug2 - ShM - C204</td>
+        <td>d2 - UrT - C204</td>
+        <td>k1 - Pfl - C205</td>
+        <td>pug2 - ShM - C305</td>
+        <td>f1 - Sie - A204</td>
+    </tr>
+
+    <tr>
+        <td>12:00 - 12:45</td>
+        <td>g1 - KiY - C203</td>
+        <td>Pause</td>
+        <td>d2 - UrT - C302</td>
+        <td>geoLF - Tri - C304</td>
+        <td>k1 - Pfl - B104</td>
+    </tr>
+
+    <tr>
+        <td>12:45 - 13:30</td>
+        <td>/</td>
+        <td>s3 - KuM</td>
+        <td>Pause</td>
+        <td>/</td>
+        <td>/</td>
+    </tr>
+
+    <tr>
+        <td>13:30 - 14:15</td>
+        <td>Arbeit?</td>
+        <td>s3 - KuM</td>
+        <td>ku2 - Hoh - A004</td>
+        <td>Arbeit?</td>
+        <td>Arbeit?</td>
+    </tr>
+
+    <tr>
+        <td>14:15 - 15:00</td>
+        <td>Arbeit?</td>
+        <td>WGeo - Tri - C203</td>
+        <td>ku2 - Hoh - A004</td>
+        <td>Arbeit?</td>
+        <td>Arbeit?</td>
+    </tr>
+
+    <tr>
+        <td>15:00 - 15:45</td>
+        <td>Arbeit?</td>
+        <td>WGeo - Tri - C203</td>
+        <td>/</td>
+        <td>Arbeit?</td>
+        <td>Arbeit?</td>
+    </tr>
+
+    <tr>
+        <td>16:00</td>
+        <td>Arbeit?</td>
+        <td>/</td>
+        <td>/</td>
+        <td>Arbeit?</td>
+        <td>Arbeit?</td>
+
+
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
