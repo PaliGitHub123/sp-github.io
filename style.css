@@ -57,3 +57,8 @@ td {
     background-color: rgba(126, 126, 205, 0.57);
     color: white;
 }
+
+.save{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
