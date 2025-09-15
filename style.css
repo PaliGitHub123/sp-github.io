@@ -16,6 +16,7 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    margin-top: 20px;
     color: #333;
 }
 
@@ -27,7 +28,7 @@ table {
 }
 
 thead {
-    background-color: #7e7ecd;
+    background-color: orange;
     color: white;
 }
 
@@ -54,7 +55,7 @@ td {
 }
 
 .pause{
-    background-color: rgba(126, 126, 205, 0.57);
+    background-color: rgba(255, 125, 0, 0.62);
     color: white;
 }
 
