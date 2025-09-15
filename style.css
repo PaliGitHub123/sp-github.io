@@ -28,7 +28,7 @@ table {
 }
 
 thead {
-    background-color: orange;
+    background-color: #ffa619;
     color: white;
 }
 
@@ -55,7 +55,7 @@ td {
 }
 
 .pause{
-    background-color: rgba(255, 125, 0, 0.62);
+    background-color: rgba(255, 125, 0, 0.24);
     color: white;
 }
 
